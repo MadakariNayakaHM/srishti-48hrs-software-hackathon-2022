@@ -1,0 +1,79 @@
+doctype html
+head
+  title Dashboard
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css')
+  
+  link(rel='stylesheet' type='text/css' href='/css/admin.css')
+style.
+  /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+  .row.content {height: 550px}
+  /* Set gray background color and 100% height */
+  .sidenav {
+  background-color: #f1f1f105;;
+  height: 100%;
+  }
+  /* On small screens, set height to 'auto' for the grid */
+  @media screen and (max-width: 767px) {
+  .row.content {height: auto;}
+  }
+//- .container.justify-content-center
+//-   .row
+//-     .col-md-8
+//-       .input-group.mb-3
+//-         input.form-control.input-text(type='text' placeholder='Search Events here....' aria-label="Recipient's username" aria-describedby='basic-addon2')
+//-         .input-group-append
+//-           button.btn.btn-outline-warning.btn-lg(type='button')
+//-             i.fa.fa-search &#x1F50D;
+nav.navbar.navbar-inverse.visible-xs
+  .container-fluid
+    .vertical-menu
+      button.menu 
+      
+      .menu-bar
+        a(href='#') Home
+        a(href='#') Organisation
+        a(href='#') Events
+        a(href='#') Membership
+        a(href='#') Apply
+        a(href='#') Account Settings
+        a(href='#') Events
+.container-fluid
+  .row.content
+    .col-sm-3.sidenav.hidden-xs
+      h2
+        .active Code Hackers
+      ul.nav.nav-pills.nav-stacked
+        li.active
+          a(href='#') Dashboard
+        li
+          a(href='/') Home
+        li
+          a(href='/createEvent') Create Event
+        li
+          a(href='/updateEvent') Update Event
+        li
+          a(href='/viewEvent') View Event
+        li
+          a(href='/viewApplication') View Application
+      br
+    br
+    .col-sm-6
+      .well
+        h4 Admin Dashboard
+      .box
+        .well
+          h4 Number of Events
+          p=events
+      .box
+        .well
+          h4 Number of Volunteers
+          p=user
+      
+      .box
+        .well
+          h4 Number of Applications
+          p=applys
+
+

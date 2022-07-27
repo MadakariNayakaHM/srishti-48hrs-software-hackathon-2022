@@ -1,0 +1,138 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family : Verdana,Tahoma, sans-serif;
+    color:antiquewhite;
+    text-align: center;
+    background-image: url('/images/9.jpeg');
+ 
+}
+
+
+
+h2{
+    color: #cec8ba;
+    font-size: medium;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+h3{
+    color: rgb(199, 186, 186);
+    font-size: medium;
+}
+
+
+header{
+    text-align: center;
+    position: fixed;
+    top:0; left: 0; right:0;
+    background:rgb(93, 50, 50);
+    z-index: 1000;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 1rem 9%;
+}
+
+header .logo{
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color:#fff;
+    text-transform: uppercase;
+}
+
+header .logo span{
+    color:#15c512;
+}
+
+header .navbar a{
+    color:#fff;
+    font-size: 2rem;
+    margin: 0 .8rem;
+}
+
+header .navbar a:hover{
+    color: var(--orange);
+}
+
+.box-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    float: left;
+    margin: 12% auto 0;
+    justify-content: center;
+}
+
+.box-container .page{
+    flex: 1 1 5rem;
+    flex-basis: 25%;
+    border-radius:  .5rem;
+    padding:1rem;
+    text-align: center;
+    background-color: rgba(17, 204, 167, 0.3);
+    transform: 1s;
+}
+
+
+.box-container .page:hover{
+    box-shadow: 0 2rem 3rem hsla(0, 50%, 94%, 0.1);
+    transform: scale(1.1);
+}
+footer{
+    background:#333;
+}
+
+.footer .box-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap:1.5rem;
+    background-color: #333;
+}
+
+.footer .box-container .box{
+    padding: 1rem 0;
+    flex: 1 1 25rem;
+}
+
+.footer .box-container .box h3{
+    font-size: 2.5rem;
+    padding: .7rem 0;
+    color: #fff;
+}
+
+.footer .box-container .box p{
+    font-size: 1.5rem;
+    padding: .7rem 0;
+    color: #eee;
+}
+.footer .box-container .box a{
+    display: block;
+    font-size: 1.5rem;
+    padding: .7rem 0;
+    color: #eee;
+}
+
+.footer .box-container .box a:hover{
+    color: var(--orange);
+    text-decoration: underline;
+}
+
+.footer .credit{
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 1rem;
+    font-size: 2rem;
+    font-weight: normal;
+    color: #fff;
+    border-top: .1rem solid rgba(255,255,255,.2);
+}
+
+.footer .credit span{
+    color: var(--orange);
+}
+
+.nav-item{
+    font-size: 12px;
+}
