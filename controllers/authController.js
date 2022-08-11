@@ -78,47 +78,47 @@ exports.login = async (req, res, next) => {
     }
   };
 
-//   exports.protect = async (req, res, next) => {
-//     let token;
-//     try {
+  exports.protect = async (req, res, next) => {
+    let token;
+    try {
       
-//       if (
-//         req.headers.authorization &&
-//         req.headers.authorization.startsWith("Bearer")
-//       ) {
-//         token = req.headers.authorization.split(" ")[1];
-//       } 
-//       if(req.cookies.jwt){
-//         token=req.cookies.jwt;
-//       }
+      if (
+        req.headers.authorization &&
+        req.headers.authorization.startsWith("Bearer")
+      ) {
+        token = req.headers.authorization.split(" ")[1];
+      } 
+      if(req.cookies.jwt){
+        token=req.cookies.jwt;
+      }
   
-//       if(!token)
-//       {
-//        return res.status(404).json({ status: "fail", message: "login 1st" });
-//       }
-//     //   if (!req.cookies.jwt)
-//     //   {
-//     //     res.status(404).json({ status: "fail", message: "login 1st" });
-//     //   }
+      if(!token)
+      {
+       return res.status(404).json({ status: "fail", message: "login 1st" });
+      }
+      if (!req.cookies.jwt)
+      {
+        res.status(404).json({ status: "fail", message: "login 1st" });
+      }
   
-//       const decoded = await promisify(jwt.verify)(
-//         token,
-//         process.env.JWT_SECRET
-//       ).catch((err) => {
-//        return res.status(401).json({ message: "expired token!!!" });
-//       });
-//       const idUser = jwt.verify(token,process.env.JWT_SECRET,(err,decoded)=>{return decoded.id})
-//       const currentUser= await user.findById(idUser);
-//       res.locals.user = currentUser
+      const decoded = await promisify(jwt.verify)(
+        token,
+        process.env.JWT_SECRET
+      ).catch((err) => {
+       return res.status(401).json({ message: "expired token!!!" });
+      });
+      const idUser = jwt.verify(token,process.env.JWT_SECRET,(err,decoded)=>{return decoded.id})
+      const currentUser= await user.findById(idUser);
+      res.locals.user = currentUser
      
-//       // const decoded=jwt.verify(token,process.env.JWT_SECRET,function(err,decoded){return decoded.id});
+      // const decoded=jwt.verify(token,process.env.JWT_SECRET,function(err,decoded){return decoded.id});
   
-//       next();
-//     } catch (err) {
-//       console.log("error occureed at protect function");
-//       console.log(err)
-//     }
-//   };
+      next();
+    } catch (err) {
+      console.log("error occureed at protect function");
+      console.log(err)
+    }
+  };
 
   exports.ristrictTo = (...roles) => {
     try {

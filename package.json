@@ -8,7 +8,7 @@
     "start:prod": "NODE_ENV=production node server.js",
     "start": "node server.js"
   },
-  "author": "Shyam p joy",
+  "author": "Madakari Nayaka HM, Vignesh A M, Prabhakar G",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.27.2",
